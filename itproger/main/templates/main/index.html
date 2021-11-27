@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+  <div class="features">
+    <h1>{{ title }}</h1>
+    <p>Все еще Главная страница</p>
+    <a href="{% url 'about' %}"><button class="btn btn-danger">Про сайт </button></a>
+
+    <h1>Тестирования Jinja</h1>
+
+    <!--Вывод данных на страницу с шаблонов-->
+    {% for el in values %}
+    <p>{{ el }}</p>
+    {% endfor %}
+
+    <!--Вывод данных на страницу с шаблона (элемент) -->
+    {{ obj.age }}
+
+    {% for el in obj %}
+      {% if el == 'Hello'%}
+    <!--Вывод данных КАПСОМ. -->
+        {% filter upper %}
+          <p>{{ el }}</p> <!--Можно указать так el|upper -->
+        {% endfilter%}
+      {% endif %}
+    {% endfor %}
+
+  </div>
+  <!-- #Добавляет конкретный файл-->
+    {% include 'main/text.html' %}
+{% endblock %}

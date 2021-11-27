@@ -1,0 +1,53 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}О сайте{% endblock %}
+
+{% block content %}
+<style>
+  .zag {
+    background-color: tomato;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+
+  }
+
+  .work {
+    color: #7ecf95;
+  }
+
+
+  .on_process {
+    color: #804bd6;
+  }
+
+  h2 {
+    color: #bd4d4d;
+  }
+
+</style>
+  <div class="features">
+
+    <div class="zag">
+      <h1>Функционал и развитие сайта</h1><br><br>
+    </div>
+
+    <h2>Что работает</h2>
+    <div class = "work">
+      <p>Добавление</p>
+      <p>Удаление</p>
+      <p>Редактирование</p><br>
+    </div>
+
+    <h2>В планах</h2>
+    <div class = "on_process">
+      <p>Авторизация</p>
+      <p>API</p>
+      <p>Редактирование</p><br>
+    </div>
+
+    <a href="{% url 'create' %}"><button class="btn btn-danger">Добавить запись </button></a>
+
+    {{ title }}
+  </div>
+{% endblock %}
